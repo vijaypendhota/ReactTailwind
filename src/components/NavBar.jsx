@@ -1,53 +1,65 @@
-import React from 'react'
-import { FaAccusoft } from "react-icons/fa";
+import React from "react";
+
 const NavBar = () => {
   return (
-    <div>
-      
-
-<nav class="bg-neutral-primary fixed w-full z-20 top-0 start-0 border-b border-default bg-white">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="https://www.bigbasket.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        {/* <img src="./bigbasket.svg" class="h-20" alt="Flowbite Logo"/> */}
-        <img src="./bblogo.png" className='h-7' alt="" />
-        <span class="self-center text-xl text-heading font-semibold whitespace-nowrap"></span>
-    </a>
-    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <button type="button" class="text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">Get started</button>
-        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-sticky" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
-        </button>
-    </div>
-    <div class="items-center justify-center hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-default rounded-base bg-neutral-secondary-soft md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-neutral-primary">
-       <a href=""></a>
-       <img src="./search" className='h-4 mt-3.5 -mr-7' alt="" />
-       <FaAccusoft />
-       <input type="text" id="input-group-1" class="block w-[300px] ps-9 pe-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded focus:ring-brand focus:border-brand px-2.5 py-2 shadow-xs placeholder:text-body" placeholder="Search for products"></input>
+    <>
+      {/* FIRST ROW */}
+      <nav className="fixed top-0 z-30 w-full  bg-white h-45 border-b border-gray-300">
+        <div className="w-450  flex justify-between ml-60   items-center px-8 py-4">
+          <img src="/bblogo.png" alt="BigBasket" className="h-14 hover:cursor-pointer" />
         
-        <div className='flex justify-between gap-20 ml-35'>
-          <li>
-          <a href="#" class="block py-2 px-3 text-black bg-brand rounded-sm md:bg-transparent md:text-fg-brand md:p-0" aria-current="page">Home</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-gray-400 md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Delivry in 10 mins</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 px-3 text-heading rounded hover:bg-blue-400 hover:text-black  bg-black text-white">Login/Sign in</a>
-        </li>
-        <img src="./cart.jpg" className='h-7 ' alt="No Image" />
+            <img src="./search" alt="" className="h-5 absolute top-9 left-130 " />
+          <input type="text" placeholder="         Search for products" 
+               className=" w-2xl  px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500"
+          />
+                     
+            <a className="text-2xl font-medium hover:text-green-600 hover:cursor-pointer">Home</a>
+            <a className="text-2xl font-medium hover:text-green-600 hover:cursor-pointer">Delivery in 10 mins</a>
+            <button className="bg-black text-white text-1xl font-medium w-35 h-15 rounded-lg hover:cursor-pointer">
+              Login / Sign Up
+            </button>
+            <img src="/cart.jpg" alt="Cart" className="h-12 cursor-pointer " /> <br/>
+            </div>
+              <div>
+         <div className="relative group px-4 cursor-pointer ml-60 mt-5 flex gap-10 gap-y-10 max-w-screen-3xl  hover:text-green-600">
+            <div className="flex  items-center w-45 pl-5 text-1xl font-bold h-12 rounded text-center text-white  bg-green-600 gap-1">
+              <span className="text-xs">Shop by</span> Category <span>▼</span>
+            </div>
+
+            {/* DROPDOWN */}
+            <div className="absolute left-0 top-full hidden group-hover:flex bg-white shadow-xl border mt-2 z-50">
+              <ul className="w-64 border-r">
+                <li className="relative group/item px-6 py-3 hover:bg-gray-100">
+                  Fruits & Vegetables
+                  <div className="absolute top-0 left-full hidden group-hover/item:block bg-white shadow-xl w-64">
+                    <ul>
+                      <li className="px-6 py-2 hover:bg-gray-100">Fresh Fruits</li>
+                      <li className="px-6 py-2 hover:bg-gray-100">Fresh Vegetables</li>
+                      <li className="px-6 py-2 hover:bg-gray-100">Exotics</li>
+                    </ul>
+                  </div>
+                </li>
+                <li className="px-6 py-3 hover:bg-gray-100">Dairy & Bakery</li>
+                <li className="px-6 py-3 hover:bg-gray-100">Snacks & Foods</li>
+              </ul>
+            </div>
+             <a className="px-4 text-2xl font-light hover:text-green-600">Exotic Fruits & Veggies</a>
+          <a className="px-4 text-2xl font-light hover:text-green-600">Tea</a>
+          <a className="px-4 text-2xl font-light hover:text-green-600">Ghee</a>
+          <a className="px-4 text-2xl font-light hover:text-green-600">Nandini</a>
+          <a className="px-4 text-2xl  font-semibold text-green-700">Smart Basket</a>
+          <a className="px-4 text-2xl font-semibold text-red-600">Offers</a>
           </div>
+                
+          
+              </div>
           
        
-      </ul>
-      
-    </div>
-  </div>
-</nav>
+        
+      </nav>
 
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default NavBar
+export default NavBar;

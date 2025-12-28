@@ -1,17 +1,15 @@
-import React from 'react'
-import NavBar from './components/NavBar'
-import HeroSection from './HeroSection'
-import TailSection from './components/TailSection'
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./LandingPage";
+import SingleComponent from "./SingleComponent";
 
 const App = () => {
   return (
-    <div>
-      <NavBar/>
-      <HeroSection/>
-      <TailSection/>
-    </div>
-  )
-}
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/single-component/:id" element={<SingleComponent />} />
+    </Routes>
+  );
+};
 
-export default App
+export default App;
